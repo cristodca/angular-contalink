@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,27 +14,27 @@ export class HomeComponent implements OnInit {
   products: Product[] = [
     {
       name: 'a',
-      price: 1,
+      price: 1.578,
       quantity: 2,
     },
     {
       name: 'b',
-      price: 1,
+      price: 1.924,
       quantity: 2,
     },
     {
       name: 'c',
-      price: 1,
+      price: 1.482,
       quantity: 2,
     },
     {
       name: 'd',
-      price: 1,
+      price: 1.274,
       quantity: 2,
     },
     {
       name: 'e',
-      price: 1,
+      price: 1.073,
       quantity: 2,
     },
   ]
@@ -43,9 +44,10 @@ export class HomeComponent implements OnInit {
     backgroundColor: 'yellow'
   }
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    console.log(this.authService.getUser());
   }
 
   removeItemFromProducts(product: Product) {

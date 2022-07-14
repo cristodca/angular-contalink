@@ -19,7 +19,7 @@
           <h5 class="fw-normal mb-0">{{product?.quantity}}  </h5>
         </div>
         <div style="width: 80px;">
-          <h5 class="mb-0">{{product?.amount && '$'}}  {{product?.amount}}  </h5>
+          <h5 class="mb-0">{{product?.amount && '$'}}  {{product?.amount | number:'0.2-2'}}  </h5>
         </div>
         <button class="btn btn-danger" (click)="deleteProduct()" >
           Eliminar

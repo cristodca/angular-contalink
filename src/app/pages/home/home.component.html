@@ -30,7 +30,7 @@
                 </div>
 
                 <app-product-card 
-                  *ngFor="let product of products" 
+                  *ngFor="let product of (products | sort: 'price')" 
                   [product]="product"
                   (onDelete)="removeItemFromProducts($event)"
                 >
